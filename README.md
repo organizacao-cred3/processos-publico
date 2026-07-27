@@ -1,20 +1,18 @@
 # 🌐 Repositório `processos-publico`
 
 Este repositório armazena **arquivos públicos** (scripts `.js` e imagens) servidos via container nginx no cluster interno.  
-Eles são utilizados por sistemas internos da **Sicoob Credisul**, como a plataforma **Dardo**, RPAs, integrações automatizadas e como `<script src="...">` no header de sites.
+Eles são utilizados por sistemas internos da organização, como a plataforma **Dardo**, RPAs, integrações automatizadas e como `<script src="...">` no header de sites.
 
 ---
 
 ## 📤 Acesso Público
 
-Os arquivos estão disponíveis no seguinte endereço:
-
-🔗 **https://codigos.sicoobcredisul.net/**
+Os arquivos estão disponíveis via endereço interno da organização.
 
 Exemplo de uso como script no header de um site:
 
 ```html
-<script src="https://codigos.sicoobcredisul.net/index.js"></script>
+<script src="https://SEU_DOMINIO/index.js"></script>
 ```
 
 ---
@@ -37,12 +35,12 @@ Exemplo de uso como script no header de um site:
 
 ## 📌 Orientações
 
-⚠️ Este projeto foi desenvolvido exclusivamente para uso da **Sicoob Credisul**.  
-É de **uso interno e restrito**, conforme as diretrizes da organização.  
+⚠️ Este projeto foi desenvolvido exclusivamente para uso interno da organização.  
+É de **uso interno e restrito**, conforme as diretrizes internas.  
 Compartilhamento, reprodução ou distribuição externa são **proibidos**, conforme a política de propriedade intelectual e segurança da informação.
 
 ---
 
 ## 🔐 License
 
-🛡️ Uso exclusivo da Sicoob Credisul
+🛡️ Uso exclusivo interno
