@@ -1,7 +1,7 @@
 # 🌐 Repositório `processos-publico`
 
-Este repositório armazena **arquivos públicos** que são disponibilizados online por meio do GitHub Pages.  
-Eles são utilizados por sistemas internos da **Sicoob Credisul**, como a plataforma **Dardo**, RPAs e integrações automatizadas.
+Este repositório armazena **arquivos públicos** (scripts `.js` e imagens) servidos via container nginx no cluster interno.  
+Eles são utilizados por sistemas internos da **Sicoob Credisul**, como a plataforma **Dardo**, RPAs, integrações automatizadas e como `<script src="...">` no header de sites.
 
 ---
 
@@ -9,7 +9,13 @@ Eles são utilizados por sistemas internos da **Sicoob Credisul**, como a plataf
 
 Os arquivos estão disponíveis no seguinte endereço:
 
-🔗 **[https://sicoob-credisul-processos.github.io/processos-publico/](https://sicoob-credisul-processos.github.io/processos-publico/)**
+🔗 **https://codigos.sicoobcredisul.net/**
+
+Exemplo de uso como script no header de um site:
+
+```html
+<script src="https://codigos.sicoobcredisul.net/index.js"></script>
+```
 
 ---
 
@@ -17,8 +23,8 @@ Os arquivos estão disponíveis no seguinte endereço:
 
 1. Adicione ou atualize arquivos nas pastas do repositório
 2. Faça commit e push para o branch `main`
-3. O GitHub Pages atualizará automaticamente a versão online do repositório
-4. Os arquivos estarão acessíveis publicamente via URL
+3. O pipeline GitLab CI/CD builda a imagem docker e faz deploy no cluster (`.gitlab-ci.yml`)
+4. Os arquivos estarão acessíveis publicamente via URL em até alguns minutos
 
 ---
 
