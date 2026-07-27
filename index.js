@@ -1238,47 +1238,42 @@ const SicoobZeev = {
 
             return parseInt(cpf.charAt(9)) === digitoVerificador1 && parseInt(cpf.charAt(10)) === digitoVerificador2
         },
-
         validarCNPJ: (cnpj) => {
-            // Validação do CNPJ
-            cnpj = cnpj.replace(/[^\d]/g, '')
+            cnpj = String(cnpj ?? '').toUpperCase().replace(/[^A-Z0-9]/g, '')
 
-            if (cnpj.length !== 14 || /^(\d)\1{13}$/.test(cnpj)) {
+            if (!/^[A-Z0-9]{12}\d{2}$/.test(cnpj)) {
                 return false
             }
 
-            let tamanho = cnpj.length - 2
-            let numeros = cnpj.substring(0, tamanho)
-            let digitos = cnpj.substring(tamanho)
-            let soma = 0
-            let pos = tamanho - 7
-
-            for (let i = tamanho; i >= 1; i--) {
-                soma += parseInt(numeros.charAt(tamanho - i)) * pos--
-                if (pos < 2) {
-                    pos = 9
-                }
-            }
-            let resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11)
-
-            if (parseInt(digitos.charAt(0)) !== resultado) {
+            if (/^([A-Z0-9])\1{13}$/.test(cnpj)) {
                 return false
             }
 
-            tamanho += 1
-            numeros = cnpj.substring(0, tamanho)
-            soma = 0
-            pos = tamanho - 7
+            const valor = (c) => c.charCodeAt(0) - 48
 
-            for (let i = tamanho; i >= 1; i--) {
-                soma += parseInt(numeros.charAt(tamanho - i)) * pos--
-                if (pos < 2) {
-                    pos = 9
+            const calcularDigito = (base) => {
+                let soma = 0
+                let peso = 2
+
+                for (let i = base.length - 1; i >= 0; i--) {
+                    soma += valor(base.charAt(i)) * peso
+                    peso = peso === 9 ? 2 : peso + 1
                 }
-            }
-            resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11)
 
-            return parseInt(digitos.charAt(1)) === resultado
+                const resto = soma % 11
+                return resto < 2 ? 0 : 11 - resto
+            }
+
+            const base = cnpj.substring(0, 12)
+            const digitos = cnpj.substring(12)
+
+            const dv1 = calcularDigito(base)
+            if (parseInt(digitos.charAt(0), 10) !== dv1) {
+                return false
+            }
+
+            const dv2 = calcularDigito(base + dv1)
+            return parseInt(digitos.charAt(1), 10) === dv2
         }
     },
     regras: {
