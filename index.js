@@ -491,8 +491,8 @@ const SicoobZeev = {
                         e sua solicitação será registrada sem problemas.
                         <br>
                         <span style="font-size:13px; opacity:0.85;">
-                            Algumas informações podem aparecer incompletas por enquanto
-                            enquanto os ajustes são finalizados.
+                            Algumas informações podem aparecer incompletas até a
+                            finalização dos ajustes.
                         </span>
                     </div>
                 `;
