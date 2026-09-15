@@ -483,16 +483,16 @@ const SicoobZeev = {
                 aviso.id = "avisoEmEdicao";
 
                 aviso.innerHTML = `
-                    <div style="font-size:16px; margin-bottom:6px;">
-                        &#128679; <strong>Formulário em ajustes</strong>
+                    <div style="font-size:17px; margin-bottom:8px;">
+                        &#128679; <strong>Este formulário está passando por melhorias</strong>
                     </div>
-                    <div style="font-size:14px; line-height:1.5;">
-                        Pode seguir normalmente: <strong>o processo continua funcionando</strong>
-                        e sua solicitação será registrada como sempre.
+                    <div style="font-size:14px; line-height:1.6;">
+                        Fique tranquilo: <strong>o processo continua funcionando normalmente</strong>
+                        e sua solicitação será registrada sem problemas.
                         <br>
                         <span style="font-size:13px; opacity:0.85;">
-                            Estamos fazendo melhorias, então algumas informações podem
-                            aparecer incompletas ou indisponíveis por enquanto.
+                            Algumas informações podem aparecer incompletas por enquanto
+                            enquanto os ajustes são finalizados.
                         </span>
                     </div>
                 `;
@@ -500,12 +500,13 @@ const SicoobZeev = {
                 aviso.style.cssText = `
                     background: linear-gradient(90deg, #ff9800, #ffd54f);
                     color: #2b2b2b;
-                    padding: 16px 20px;
-                    border-radius: 8px;
+                    padding: 18px 24px;
+                    border-radius: 10px;
                     border-left: 5px solid #e65100;
                     font-weight: 500;
-                    margin-bottom: 24px;
-                    text-align: left;
+                    margin: 0 auto 24px auto;
+                    max-width: 640px;
+                    text-align: center;
                     box-shadow: 0 6px 14px rgba(0,0,0,0.18);
                 `;
 
