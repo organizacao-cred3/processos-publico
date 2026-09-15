@@ -477,30 +477,38 @@ const SicoobZeev = {
             },
             emEdicao: () => {
                 const box = document.getElementById("BoxFrmExecute");
-                if (!box) return;
+                if (!box || document.getElementById("avisoEmEdicao")) return;
 
                 const aviso = document.createElement("div");
+                aviso.id = "avisoEmEdicao";
 
                 aviso.innerHTML = `
-                    &#128679; <strong>Desculpe!</strong> Este formulário está passando por ajustes.
-                    <br>
-                    <span style="font-size: 13px; opacity: 0.9;">
-                    Algumas informações podem não estar disponíveis no momento.
-                    </span>
+                    <div style="font-size:16px; margin-bottom:6px;">
+                        &#128679; <strong>Formulário em ajustes</strong>
+                    </div>
+                    <div style="font-size:14px; line-height:1.5;">
+                        Pode seguir normalmente: <strong>o processo continua funcionando</strong>
+                        e sua solicitação será registrada como sempre.
+                        <br>
+                        <span style="font-size:13px; opacity:0.85;">
+                            Estamos fazendo melhorias, então algumas informações podem
+                            aparecer incompletas ou indisponíveis por enquanto.
+                        </span>
+                    </div>
                 `;
 
                 aviso.style.cssText = `
                     background: linear-gradient(90deg, #ff9800, #ffd54f);
                     color: #2b2b2b;
-                    padding: 14px 18px;
+                    padding: 16px 20px;
                     border-radius: 8px;
-                    font-weight: 600;
+                    border-left: 5px solid #e65100;
+                    font-weight: 500;
                     margin-bottom: 24px;
-                    text-align: center;
+                    text-align: left;
                     box-shadow: 0 6px 14px rgba(0,0,0,0.18);
                 `;
 
-                // Insere acima do formulário
                 box.parentNode.insertBefore(aviso, box);
             }
         },
