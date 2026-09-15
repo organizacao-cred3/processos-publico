@@ -504,8 +504,7 @@ const SicoobZeev = {
                     border-radius: 10px;
                     border-left: 5px solid #e65100;
                     font-weight: 500;
-                    margin: 0 auto 24px auto;
-                    max-width: 640px;
+                    margin-bottom: 24px;
                     text-align: center;
                     box-shadow: 0 6px 14px rgba(0,0,0,0.18);
                 `;
